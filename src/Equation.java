@@ -340,6 +340,7 @@ public class Equation {
 	
 	//reassign
 	public static Equation reassign(Equation complete_eqn , Node starting_pointer, Node stoping_pointer , double result) {
+		try {
 		if(starting_pointer.prev != null) {
 			starting_pointer = starting_pointer.prev;
 		}
@@ -403,7 +404,11 @@ public class Equation {
 		if(complete_eqn.head.next.next != complete_eqn.tail) {
 			complete_eqn.displayNodes(complete_eqn);
 		}
-		return complete_eqn;
+		}catch(NullPointerException e) {
+			//
+		}finally {
+			return complete_eqn;
+		}
 	}
 	
 }
