@@ -81,7 +81,7 @@ public class Solver {
 		//Input Format: [x + y - i *v ^ q  / d]
 		//Output Format: X Answer
 		double result = 0.0;
-		
+		try {
 		format = new DecimalFormat(".####");
 		
 		Equation.Node numOne = startingPointer;
@@ -321,6 +321,8 @@ public class Solver {
 			}
 			curr = curr.next;
 		}
+		
+		}catch(NullPointerException e) {}
 		return result;
 	}
 	
